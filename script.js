@@ -12,6 +12,24 @@ document.addEventListener("DOMContentLoaded",()=>{
         const response=await fetch(url)
         const responseData=await response.json()
         console.log(responseData)
+        showMovies(responseData.results)
+    }
+    function showMovies(movies){
+        main.innerHTML=""
+        movies.forEach(async (movie)=>{
+            const {id,poster_path,title,overview}=movie
+            const movieEl=document.createElement("div")
+            movieEl.classList.add(`movie`)
+            movieEl.innerHTML=`
+            <img src="${imgPath+poster_path}"alt="${title}"/>
+            <div class="movie-info">
+            <h3>${title}</h3>
+            </div>
+            <div class="overview">
+            <h3>Overview</h3>
+            </div>`
+            main.appendChild(movieEl)
+        })
     }
 
 })
