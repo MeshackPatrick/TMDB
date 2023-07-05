@@ -31,5 +31,13 @@ document.addEventListener("DOMContentLoaded",()=>{
             main.appendChild(movieEl)
         })
     }
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        const searchTerm=search.value
+        if(searchTerm){
+            getMovie(searchApi+searchTerm)
+            search.value=""
+        }
+    })
 
 })
