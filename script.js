@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return "red";
         }
     }
-    // searching for movie ,personor show from the api
+    // searching for movie ,person show from the api
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         const searchTerm = search.value;
