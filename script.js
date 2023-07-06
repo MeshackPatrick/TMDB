@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+    //API URL
     const apiUrl = "https://api.themoviedb.org/3/discover/movie?api_key=8613e44dd729f371ce69257fa7c24c0c";
     const imgPath = "https://image.tmdb.org/t/p/w500/";
     const searchApi = "https://api.themoviedb.org/3/search/movie?&api_key=8613e44dd729f371ce69257fa7c24c0c&query=";
-
+    // DOM Elements
     const main = document.getElementById('content');
     const form = document.getElementById('form');
     const search = document.getElementById('search');
-
+    //fetching and display movies
     getMovie(apiUrl);
 
     async function getMovie(url) {
@@ -44,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-
+    //getting movies rating votes
     function getClassByRate(vote) {
         if (vote >= 8) {
             return "green";
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return "red";
         }
     }
-
+    // searching for movie ,personor show from the api
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         const searchTerm = search.value;
