@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #FFFFFF;
+    background-color: #141212;
     font-family: inherit;
     margin: 0;
     padding: 0;
@@ -36,11 +36,11 @@ h1 {
 }
 
 .search::placeholder {
-    color: #FFFFFF;
+    color: #7378c5;
 }
 
 .search:focus {
-    background-color: #373b69;
+    background-color: #050505;
     outline: none;
 }
 
@@ -63,7 +63,8 @@ div {
 
 .movie img {
     width: 100%;
-    z-index: 1;
+    display: block;
+    transition: trasform 0.5s;
 }
 
 .movie-info {
@@ -81,7 +82,7 @@ div {
 }
 
 .movie-info span {
-    background-color: #22254b;
+    background-color:aqua;
     border-radius: 3px;
     font-weight: bold;
     padding: 0.25rem 0.8rem;
@@ -100,22 +101,26 @@ div {
 }
 
 .overview {
-    background-color: #fff;
-    padding: 2rem;
+    background:linear-gradient(rgba(0,0,0,0.4),#e31b59);
+    padding: 0 40px;
+    color: #ffffff;
+    border-radius: 5px;
+    justify-content: center;
+    font-size: 14px;
     position: absolute;
     max-height: 0;
     overflow: hidden;
     left: 0;
     bottom: 0;
     right: 0;
-    z-index: 2;
     transform: translateY(100%);
-    transition: max-height 0.3s ease-in-out;
+    transition: 0.3s
 }
 
 .overview.show-overview {
     max-height: 100%;
     transform: translateY(0);
+    transition: opacity0.5s ease-in-out,transform 0.5s ease-in-out;
 }
 
 .overview h3 {
