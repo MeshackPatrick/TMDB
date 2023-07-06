@@ -1,24 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
-*{
+
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: #FFFFFF;
     font-family: inherit;
-    margin:0;
+    margin: 0;
     padding: 0;
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
-header{
+
+header {
     display: flex;
     background-color: #046D9D;
 }
-h1{
+
+h1 {
     align-self: center;
     margin-left: 2rem;
     color: #FFFFFF;
 }
-.search{
+
+.search {
     margin: 3rem;
     margin-left: 1rem;
     background-color: transparent;
@@ -29,21 +34,25 @@ h1{
     font-size: 1rem;
     padding: 0.5rem 1rem;
 }
-.search::placeholder{
+
+.search::placeholder {
     color: #FFFFFF;
 }
-.search:focus{
+
+.search:focus {
     background-color: #373b69;
     outline: none;
 }
-div{
+
+div {
     display: flex;
     flex-wrap: wrap;
 }
-.movie{
+
+.movie {
     background-color: #2D2E34;
     border-radius: 10px;
-    box-shadow: 0 4px rgba(0,0,0,0.2);
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     position: relative;
     margin: 1rem;
@@ -51,9 +60,12 @@ div{
     align-items: center;
     width: 270px;
 }
-.movie img{
+
+.movie img {
     width: 100%;
+    z-index: 1;
 }
+
 .movie-info {
     color: #eee;
     display: flex;
@@ -63,46 +75,54 @@ div{
     padding: 0.5rem 1rem 1rem;
     letter-spacing: 0.5px;
 }
-.movie-info h3{
+
+.movie-info h3 {
     margin: 0;
 }
-.movie-info span{
+
+.movie-info span {
     background-color: #22254b;
     border-radius: 3px;
     font-weight: bold;
     padding: 0.25rem 0.8rem;
 }
-.movie-info span.green{
-    color: rgba(39,189,39);
+
+.movie-info span.green {
+    color: rgba(39, 189, 39);
 }
-.movie-info span.orange{
-    color:orange;
+
+.movie-info span.orange {
+    color: orange;
 }
-.movie-info span.red{
-    color: rgba(189,42,42);
+
+.movie-info span.red {
+    color: rgba(189, 42, 42);
 }
-.overview{
+
+.overview {
     background-color: #fff;
     padding: 2rem;
     position: absolute;
-    max-height: 100%;
-    overflow: auto;
+    max-height: 0;
+    overflow: hidden;
     left: 0;
     bottom: 0;
     right: 0;
-    transform: translateY(101%);
-    transition: transform 0.3s ease-in;
+    z-index: 2;
+    transform: translateY(100%);
+    transition: max-height 0.3s ease-in-out;
 }
-.overview h3{
+
+.overview.show-overview {
+    max-height: 100%;
+    transform: translateY(0);
+}
+
+.overview h3 {
     margin-top: 0;
 }
-.movie:hover.overview{
-    transform:translateY(0);
-}
-.movie:not(:hover).overview{
-    transform: translateY(101%)!important;
-}
-footer{
+
+footer {
     text-align: center;
     background-color: #046D9D;
     color: #ffffff;
@@ -110,5 +130,4 @@ footer{
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
-
 }
